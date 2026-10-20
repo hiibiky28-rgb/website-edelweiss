@@ -1,0 +1,396 @@
+/* =================================
+   WEBSITE HANI — EDELWEISS THEME
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: "Segoe UI", sans-serif;
+    color: #586653;
+
+    /* BACKGROUND EDELWEIS */
+    background-color: #f7f1e5;
+    background-image:
+        linear-gradient(
+            rgba(255, 250, 239, 0.12),
+            rgba(255, 250, 239, 0.12)
+        ),
+        url("Edelweiss.jpeg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px 16px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* PARTIKEL DEKORASI */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+
+    width: 5px;
+    height: 5px;
+
+    background: rgba(255, 255, 235, 0.9);
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px rgba(255, 255, 220, 0.8);
+
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) translateX(25px);
+        opacity: 0;
+    }
+}
+
+/* KARTU UTAMA */
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 32px 23px;
+
+    text-align: center;
+
+    background: rgba(255, 252, 244, 0.79);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 40px rgba(74, 85, 61, 0.13),
+        inset 0 0 20px rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: cardAppear 1s ease;
+}
+
+/* ANIMASI KARTU */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* BUNGA DEKORASI */
+
+.flower {
+    width: 72px;
+    height: 72px;
+
+    position: relative;
+    margin: 0 auto 20px;
+
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(3deg);
+    }
+}
+
+.petal {
+    position: absolute;
+
+    width: 23px;
+    height: 35px;
+
+    left: 24px;
+    top: 2px;
+
+    background: #fffdf4;
+    border: 1px solid #e9e4cf;
+    border-radius: 50% 50% 45% 45%;
+
+    transform-origin: 50% 34px;
+
+    box-shadow: 0 2px 5px rgba(93, 104, 75, 0.08);
+}
+
+.petal:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.petal:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.petal:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.petal:nth-child(4) {
+    transform: rotate(135deg);
+}
+
+.petal:nth-child(5) {
+    transform: rotate(180deg);
+}
+
+.petal:nth-child(6) {
+    transform: rotate(225deg);
+}
+
+.petal:nth-child(7) {
+    transform: rotate(270deg);
+}
+
+.petal:nth-child(8) {
+    transform: rotate(315deg);
+}
+
+.flower::after {
+    content: "";
+
+    position: absolute;
+    left: 29px;
+    top: 28px;
+
+    width: 14px;
+    height: 14px;
+
+    background: #d9c98d;
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(217, 201, 141, 0.4);
+}
+
+/* TEKS */
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #89957a;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(27px, 7vw, 34px);
+    font-weight: normal;
+    line-height: 1.35;
+
+    color: #52634d;
+
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #737b69;
+
+    margin-bottom: 22px;
+}
+
+/* TOMBOL */
+
+button {
+    display: block;
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: 12px;
+    padding: 13px 18px;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #59684f;
+
+    background: rgba(255, 255, 249, 0.85);
+
+    border: 1px solid #dce1d1;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+    background: #edf0e3;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(91, 109, 76, 0.12);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 2px solid #879b76;
+    outline-offset: 3px;
+}
+
+/* TOMBOL UTAMA */
+
+button.primary {
+    color: #fffdf6;
+    background: #879b76;
+
+    border-color: #879b76;
+}
+
+button.primary:hover {
+    background: #758b65;
+}
+
+/* TEKS PENUTUP */
+
+.footer {
+    margin-top: 25px;
+
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+
+    color: #929a83;
+}
+
+/* TRANSISI PERGANTIAN HALAMAN */
+
+.container.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.container.fade-in {
+    animation: cardAppear 0.6s ease;
+}
+
+/* RESPONSIF UNTUK HP */
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 20px 15px;
+
+        background-position: center center;
+        background-attachment: scroll;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 28px 20px;
+
+        border-radius: 23px;
+    }
+
+    .flower {
+        transform: scale(0.95);
+        margin-bottom: 17px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    p {
+        font-size: 13.5px;
+        line-height: 1.85;
+    }
+
+    button {
+        min-height: 48px;
+        font-size: 14px;
+    }
+}
+
+/* HP DENGAN LAYAR PENDEK */
+
+@media screen and (max-height: 650px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* MENGHORMATI PENGATURAN REDUKSI ANIMASI */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
